@@ -56,6 +56,19 @@ OpenClaw Zero Token is a fork of [OpenClaw](https://github.com/openclaw/openclaw
 
 > **Note:** All web-based providers use browser automation (Playwright) for authentication and API access. Platforms marked **Tested** have been verified to work.
 
+### Tool Calling (Local Tools)
+
+All supported models can call **local tools** (e.g. exec, read_file, list_dir, browser, apply_patch) so the agent can run commands, read/write files in the workspace, and automate the browser.
+
+| Provider type | Tool support | Notes |
+|---------------|--------------|--------|
+| **Web (DeepSeek, Qwen, Kimi, Claude, Doubao, GLM, Grok)** | ✅ | XML-based tool instructions in system prompt; stream parser extracts `<tool_call>` and executes locally. |
+| **ChatGPT Web / Gemini Web / Manus API** | ✅ | Same approach: tool instructions + multi-turn context + `<tool_call>` parsing (see [Tool Calling doc](docs/TOOL_CALLING_MODELS.md)). |
+| **OpenRouter / OpenAI-compatible API** | ✅ | Native `tools` / `tool_calls` API. |
+| **Ollama** | ✅ | Native `/api/chat` tools. |
+
+The agent’s file access is limited to the configured **workspace** directory (see `agents.defaults.workspace` in config). For details and verification steps, see **[docs/TOOL_CALLING_MODELS.md](docs/TOOL_CALLING_MODELS.md)**.
+
 ### Setup Steps (6 Steps)
 
 ```bash

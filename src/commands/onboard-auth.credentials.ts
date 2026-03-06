@@ -281,7 +281,7 @@ export {
   DEEPSEEK_WEB_DEFAULT_MODEL_REF,
 } from "./onboard-auth.models.js";
 
-export const CLAUDE_WEB_DEFAULT_MODEL_REF = "claude-web/claude-3-5-sonnet-20241022";
+export const CLAUDE_WEB_DEFAULT_MODEL_REF = "claude-web/claude-sonnet-4-6";
 export const GLM_INTL_WEB_DEFAULT_MODEL_REF = "glm-intl-web/glm-4-plus";
 
 export async function setSiliconFlowGlobalApiKey(key: string, agentDir?: string) {

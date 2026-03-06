@@ -6,7 +6,7 @@ export const DEFAULT_CONTEXT_TOKENS = 200_000;
 export const PROVIDER_DEFAULTS: Record<string, { provider: string; model: string }> = {
   "deepseek-web": { provider: "deepseek-web", model: "deepseek-chat" },
   "doubao-web": { provider: "doubao-web", model: "doubao-seed-2.0" },
-  "claude-web": { provider: "claude-web", model: "claude-3-5-sonnet-20241022" },
+  "claude-web": { provider: "claude-web", model: "claude-sonnet-4-6" },
 };
 
 const FALLBACK_PROVIDER = "deepseek-web";

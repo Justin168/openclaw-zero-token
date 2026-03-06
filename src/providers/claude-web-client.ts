@@ -194,28 +194,28 @@ export class ClaudeWebClient {
   async discoverModels(): Promise<ModelDefinitionConfig[]> {
     return [
       {
-        id: "claude-3-5-sonnet-20241022",
-        name: "Claude 3.5 Sonnet",
+        id: "claude-sonnet-4-6",
+        name: "Claude Sonnet 4.6",
         provider: "claude-web",
         api: "claude-web",
         contextWindow: 200000,
         maxOutputTokens: 8192,
       },
       {
-        id: "claude-3-opus-20240229",
-        name: "Claude 3 Opus",
+        id: "claude-opus-4-6",
+        name: "Claude Opus 4.6",
         provider: "claude-web",
         api: "claude-web",
         contextWindow: 200000,
-        maxOutputTokens: 4096,
+        maxOutputTokens: 16384,
       },
       {
-        id: "claude-3-haiku-20240307",
-        name: "Claude 3 Haiku",
+        id: "claude-haiku-4-6",
+        name: "Claude Haiku 4.6",
         provider: "claude-web",
         api: "claude-web",
         contextWindow: 200000,
-        maxOutputTokens: 4096,
+        maxOutputTokens: 8192,
       },
     ];
   }

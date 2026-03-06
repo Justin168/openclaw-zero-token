@@ -123,9 +123,9 @@ http://127.0.0.1:3001/#token=62b791625fa441be036acd3c206b7e14e2bb13c803355823
 **预期结果**：应该看到以下模型
 
 ```
-claude-web/claude-3-5-sonnet-20241022
-claude-web/claude-3-opus-20240229
-claude-web/claude-3-haiku-20240307
+claude-web/claude-sonnet-4-6
+claude-web/claude-opus-4-6
+claude-web/claude-haiku-4-6
 doubao-web/doubao-seed-2.0
 doubao-web/doubao-pro
 chatgpt-web/gpt-4
@@ -152,7 +152,7 @@ manus-api/manus-1.6-lite
 ### 步骤 8：测试对话
 
 **操作**：
-1. 在 Web UI 中选择一个模型（如 `claude-web/claude-3-5-sonnet-20241022`）
+1. 在 Web UI 中选择一个模型（如 `claude-web/claude-sonnet-4-6`）
 2. 发送测试消息："你好，请介绍一下你自己"
 3. 检查是否能正常收到回复
 

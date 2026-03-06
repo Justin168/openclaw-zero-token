@@ -167,7 +167,7 @@ const DOUBAO_WEB_DEFAULT_COST = {
 };
 
 export const CLAUDE_WEB_BASE_URL = "https://claude.ai";
-export const CLAUDE_WEB_DEFAULT_MODEL_ID = "claude-3-5-sonnet-20241022";
+export const CLAUDE_WEB_DEFAULT_MODEL_ID = "claude-sonnet-4-6";
 const CLAUDE_WEB_DEFAULT_CONTEXT_WINDOW = 200000;
 const CLAUDE_WEB_DEFAULT_MAX_TOKENS = 8192;
 const CLAUDE_WEB_DEFAULT_COST = {
@@ -892,8 +892,8 @@ export async function discoverClaudeWebModels(params?: {
 
   return [
     {
-      id: "claude-3-5-sonnet-20241022",
-      name: "Claude 3.5 Sonnet (Web)",
+      id: "claude-sonnet-4-6",
+      name: "Claude Sonnet 4.6 (Web)",
       reasoning: false,
       input: ["text", "image"],
       cost: CLAUDE_WEB_DEFAULT_COST,
@@ -901,17 +901,17 @@ export async function discoverClaudeWebModels(params?: {
       maxTokens: CLAUDE_WEB_DEFAULT_MAX_TOKENS,
     },
     {
-      id: "claude-3-opus-20240229",
-      name: "Claude 3 Opus (Web)",
+      id: "claude-opus-4-6",
+      name: "Claude Opus 4.6 (Web)",
       reasoning: false,
       input: ["text", "image"],
       cost: CLAUDE_WEB_DEFAULT_COST,
       contextWindow: CLAUDE_WEB_DEFAULT_CONTEXT_WINDOW,
-      maxTokens: CLAUDE_WEB_DEFAULT_MAX_TOKENS,
+      maxTokens: 16384,
     },
     {
-      id: "claude-3-haiku-20240307",
-      name: "Claude 3 Haiku (Web)",
+      id: "claude-haiku-4-6",
+      name: "Claude Haiku 4.6 (Web)",
       reasoning: false,
       input: ["text", "image"],
       cost: CLAUDE_WEB_DEFAULT_COST,

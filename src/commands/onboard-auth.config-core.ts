@@ -619,7 +619,7 @@ export async function applyDoubaoWebConfig(cfg: OpenClawConfig): Promise<OpenCla
 }
 
 export const CLAUDE_WEB_BASE_URL = "https://claude.ai";
-export const CLAUDE_WEB_DEFAULT_MODEL_ID = "claude-3-5-sonnet-20241022";
+export const CLAUDE_WEB_DEFAULT_MODEL_ID = "claude-sonnet-4-6";
 export const CLAUDE_WEB_DEFAULT_MODEL_REF = `claude-web/${CLAUDE_WEB_DEFAULT_MODEL_ID}`;
 
 export async function applyClaudeWebProviderConfig(cfg: OpenClawConfig): Promise<OpenClawConfig> {

@@ -29,7 +29,7 @@ OpenClaw Zero Token 是 [OpenClaw](https://github.com/openclaw/openclaw) 的分�
 | 千问国际版 (Qwen International) | ✅ **已测试** | Qwen 3.5 Plus, Qwen 3.5 Turbo |
 | 千问国内版 (Qwen 国内版) | ✅ **新增** | Qwen 3.5 Plus, Qwen 3.5 Turbo |
 | Kimi | ✅ **已测试** | Moonshot v1 8K, 32K, 128K |
-| Claude Web | ✅ **已测试** | claude-3-5-sonnet-20241022, claude-3-opus-20240229, claude-3-haiku-20240307 |
+| Claude Web | ✅ **已测试** | claude-sonnet-4-6, claude-opus-4-6, claude-haiku-4-6 |
 | 豆包 (Doubao) | ✅ **已测试** | doubao-seed-2.0, doubao-pro |
 | ChatGPT Web | ✅ **已测试** | GPT-4, GPT-4 Turbo |
 | Gemini Web | ✅ **已测试** | Gemini Pro, Gemini Ultra |
@@ -361,7 +361,7 @@ open http://127.0.0.1:3001
 /model deepseek-web
 
 # 或者指定具体的模型
-/model claude-web/claude-3-5-sonnet-20241022
+/model claude-web/claude-sonnet-4-6
 /model doubao-web/doubao-seed-2.0
 /model deepseek-web/deepseek-chat
 ```
@@ -386,7 +386,7 @@ open http://127.0.0.1:3001
 ```
 Model                                      Input      Ctx      Local Auth  Tags
 doubao-web/doubao-seed-2.0                 text       63k      no    no    default,configured,alias:Doubao Browser
-claude-web/claude-3-5-sonnet-20241022      text+image 195k     no    no    configured,alias:Claude Web
+claude-web/claude-sonnet-4-6         text+image 195k     no    no    configured,alias:Claude Web
 deepseek-web/deepseek-chat                 text       64k      no    no    configured
 ```
 

@@ -107,6 +107,33 @@ See **START_HERE.md**, **INSTALLATION.md**, and **TEST_STEPS.md** for details.
 
 ### Script Overview
 
+The project provides several helper scripts for different scenarios:
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         Script Flow Diagram                          │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  First-time setup:                                                   │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │ 1. Build              npm install && npm run build && pnpm ui:build │  │
+│  │ 2. Open browser debug  ./start-chrome-debug.sh               │  │
+│  │ 3. Login to platforms  Qwen, Kimi, Claude, etc.              │  │
+│  │ 4. Configure onboard   ./onboard.sh                          │  │
+│  │ 5. Start server        ./server.sh start                     │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+│                                                                      │
+│  Daily use:                                                          │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │ start-chrome-debug.sh → onboard.sh → server.sh start         │  │
+│  │ server.sh [start|stop|restart|status]  Manage Gateway        │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Core scripts (3):**
+
 | Script | Purpose | When to use |
 |--------|---------|-------------|
 | `start-chrome-debug.sh` | Launch Chrome in debug mode | Step 2: Opens browser on port 9222 for platform login and onboard connection |
@@ -151,6 +178,8 @@ node openclaw.mjs onboard
 # Select login mode
 ? DeepSeek Auth Mode:
   > Automated Login (Recommended)  # Auto-capture credentials
+
+# Once you see auth success, you're done. To add more models, run ./onboard.sh again.
 ```
 
 #### Step 3: Start Gateway
@@ -308,9 +337,12 @@ export function createPlatformWebStreamFn(credentials: string): StreamFn {
 openclaw-zero-token/
 ├── src/
 │   ├── providers/           # Web auth & API clients
+│   │   ├── *-web-auth.ts    # Platform login & credential capture
+│   │   └── *-web-client.ts  # Platform API client
 │   ├── agents/              # Stream handlers
-│   ├── commands/            # Auth flows
-│   └── browser/             # Chrome automation
+│   │   └── *-web-stream.ts  # Platform response parsing
+│   ├── commands/            # Auth flows (auth-choice.apply.*.ts)
+│   └── browser/             # Chrome automation (chrome.ts)
 ├── ui/                      # Web UI (Lit 3.x)
 ├── .openclaw-zero-state/    # Local state (not committed)
 │   ├── openclaw.json        # Config
@@ -351,6 +383,13 @@ Use `/models` to see all configured models:
 ```
 
 > **Rule:** Only platforms completed in `./onboard.sh` are written to `openclaw.json` and shown in `/models`.
+
+This displays:
+
+- All available providers (claude-web, doubao-web, deepseek-web, etc.)
+- Model list under each provider
+- Currently active model
+- Model aliases and config info
 
 **Example output:**
 

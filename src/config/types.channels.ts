@@ -42,6 +42,7 @@ export type ChannelsConfig = {
   whatsapp?: WhatsAppConfig;
   telegram?: TelegramConfig;
   discord?: DiscordConfig;
+  feishu?: ExtensionChannelConfig;
   irc?: IrcConfig;
   googlechat?: GoogleChatConfig;
   slack?: SlackConfig;
